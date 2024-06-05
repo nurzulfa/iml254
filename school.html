@@ -1,0 +1,316 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <style type="text/css">
+        * {
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url('image/sand.jpg');
+            animation: moveBackground 30s linear infinite alternate;
+            background-size: cover;
+            color: #333;
+            padding-bottom: 1px;
+        }
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+        .banner {
+            width: 100%;
+            text-align: center;
+            padding: 0;
+            margin-top: -20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .banner img {
+            max-width: 100%;
+            height: auto;
+        }
+        .navbar {
+            background: #F5DEB3;
+            padding: 8px;
+            width: 100%;
+            position: relative;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 0;
+        }
+        .navdiv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        li {
+            position: relative;
+            list-style: none;
+            display: inline-block;
+        }
+        li a {
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 25px;
+        }
+        li a:hover {
+            color: #E9967A;
+        }
+        .home-button a {
+            display: flex;
+            align-items: center;
+            font-size: 21px;
+            margin-top: -6px;
+        }
+        .header {
+            text-align: center;
+            padding: 30px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin: 20px auto;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: rgba(245, 222, 179, 0.8);
+        }
+        .header h1 {
+            font-size: 78px;
+            color: #E9967A;
+        }
+        .footer {
+            background: #F5DEB3;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .footer a {
+            color: black;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #E9967A;
+        }
+        .footer p {
+            color: black;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #F5DEB3;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            min-width: 160px;
+        }
+        .dropdown a {
+            color: black;
+            padding: 8px 10px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            width: 100%;
+        }
+        .dropdown a:hover {
+            background-color: #E9967A;
+            color: white;
+        }
+        li:hover .dropdown {
+            display: block;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .section {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: scale(1.05);
+            background-color: #F5DEB3;
+        }
+        .section img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+            border: 5px solid #E9967A;
+        }
+        .section p {
+            font-size: 20px;
+            color: #333;
+            text-align: justify;
+            border: 2px solid #E9967A; 
+            padding: 15px; 
+            border-radius: 10px;
+            flex: 1;
+            width: calc(100% - 340px);
+        }
+        .section p span {
+            color: #E9967A;
+            font-weight: bold;
+       }
+        
+        #topButton {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            background-color: #E9967A;
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #topButton:hover {
+            background-color: #E9967A;
+            transform: translateY(-5px);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="banner">
+     <a href="#"><img src="image/banner2.png" alt="banner"></a>
+</div>
+<nav class="navbar">
+    <div class="navdiv">
+        <ul>
+            <li class="home-button"><a href="index.html">🏠︎</a></li>
+            <li><a href="aboutme.html">ABOUT ME</a></li>
+            <li><a href="hobby.html">HOBBY</a></li>
+            <li> 
+                <a href="education.html">EDUCATION</a>                
+                <ul class="dropdown">
+                    <li><a href="school.html">SCHOOL</a></li>
+                    <li><a href="university.html">UNIVERSITY</a></li>
+                </ul>
+            </li> 
+            <li><a href="family.html">FAMILY</a></li>
+            <li><a href="friends.html">FRIENDS</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+         </ul>
+     </div>
+</nav>
+
+<div class="header">
+     <h1>School🎓</h1>
+</div>
+
+<div class="content">
+    <div class="section">
+        <img src="image/schoolsmk.jpg" alt="School Memory 1">
+        <p><span>SMK TUN SHARIFAH RODZIAH🏫:</span> To begin with, My secondary school was at SMK Tun Sharifah Rodziah in Alor Setar.The school was founded in 1963. At that time there were 280 students and 16 teachers. In October 1969, YB Datuk Patinggi Haji Abd Rahman b Yaakub, the Minister of Education of Malaysia officiated the opening of this school named Sekolah Menengah Tun Sharifah Rodziah. Do I miss this view each time I arrive at school in the morning back then? yes, a thousand yes!</p>
+    </div>
+    <div class="section">
+        <img src="image/school3.jpg" alt="School Memory 2">
+        <p><span>GROUP PROJECT💡:</span> This was an unforgetabble moment when me and my group members were busy in inventing a parachute maded from bottle, plastic bag,and thread. We had so much fun together because you must have this creativity skills in completing this task. Oh btw, the middle one with a whole purple uniform is me!</p>
+    </div>
+    <div class="section">
+        <img src="image/school10.jpg" alt="School Memory 3">
+        <p><span>SELFIE TIME📸:</span> Sijil Peperiksaan Malaysia (SPM) was around the corner yet we still have had our time to enjoy this moment by forming a selfie group! As form 5 student, we are given permission to bring a mobile phone and laptop as to make research for our work. Love the vibess!</p>
+    </div>
+    <div class="section">
+        <img src="image/school4.jpg" alt="School Memory 4">
+        <p><span>SELFIE TIME AGAIN?!˙✧˖°📷 ༘ ⋆｡°:</span> No explanation needed. Can't you guys see how we loved and adore taking picture even doing nothing? This is girls stuff!</p>
+    </div>
+    <div class="section">
+        <img src="image/school5.jpg" alt="School Memory 5">
+        <p><span>HANGOUT TOGETHER❤︎:</span> This is the moment where our headmaster had give us a voucher from kfc where we would get a free set of snack plate if we get a full attendance without absence for a year. It is a method to encourage student to fulfill the attendance for the sake of school reputation. Well, I guess it works. We had took this chance to hangout together after school or should I spell it as self-reward for being a good student?</p>
+    </div>
+
+ <div class="section">
+        <img src="image/school6.jpg" alt="School Memory 6">
+        <p><span>1 DAY BEFORE SPM⚠️:</span> This picture describe the moment one day before SPM. We actually had get ready to go home but one of my classmate wanted to capture this moment before the examination next day. We were nervous but hoping for everything being ease.</p>
+    </div>
+ <div class="section">
+        <img src="image/school2.jpg" alt="School Memory 7">
+        <p><span>SPM RESULT DAY🔥:</span> This is the day of SPM result. The moment I heard my name being announced on the stage as student who excellent in SPM, my eyes filled with tears. I just knew I did it. I still remember my teacher, Cikgu Husna wrapped me in a tight hug at the back stage. I still can feel her warm embrace util now ♡. </p>
+    </div>
+ <div class="section">
+        <img src="image/school11.jpg" alt="School Memory 8">
+        <p><span>MY SPM RESULT🕊️:</span> I know it is not a good result compare to other students but I still proud with myself. My SPM journey had been a tough phase. I still remember the moment when my entire family being positive Covid-19. They had to quarantine themselves at their own rooms. I had to study alone at the living room since I couldn't get near with them and must stand 2 meters from them. Ever since then, my aunt drove me to school each morning. The only source I can communicate with them only by phone. It was tough but a memorable one♡ ̆̈</p>
+    </div>
+    <div class="section">
+        <img src="image/school7.jpg" alt="School Memory 9">
+        <p><span>LAST DAY MEETING♥︎:</span> This is my last picture with my friends. Ever since then, we barely met due to our commitment for studies. Some of them choose form 6 and some choose diploma and here am I choosing the second one as my choices. Whatever path we takes, I hope we will always rode to sucess in the future.</p>
+    </div>
+</div>
+
+<div class="footer">
+    <a href="https://www.instagram.com/nrzlfhna/" target="_blank"><i class="fa fa-instagram"></i></a>
+    <a href="https://wa.me/01155091570" target="_blank"><i class="fa fa-whatsapp"></i></a>
+    <a href="https://github.com/nurzulfa" target="_blank"><i class="fa fa-github"></i></a>
+    <a href="https://www.youtube.com/channel/UCqFozWi03HkJGqrNpwCNmlQ" target="_blank"><i class="fa fa-youtube"></i></a>
+    <p class="w3-medium">
+        Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+    </p>
+    <p style="font-size:14px; color: black;">
+        Disclaimer: The content of this website is for informational purposes only.
+    </p>
+    <p style="font-size:14px; color: black;">
+        &copy; 2024 Nur Zulfa Hana. All rights reserved.
+    </p>
+</div>
+
+<button id="topButton" title="Go to top">Top</button>
+
+<script>
+      const topButton = document.getElementById("topButton");
+
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            topButton.style.display = "block";
+        } else {
+            topButton.style.display = "none";
+        }
+    }
+
+    topButton.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+</script>
+
+</body>
+</html>
+
+
